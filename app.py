@@ -14,6 +14,7 @@ import streamlit as st
 from adaptive import choose_allocation
 
 from storage import create_session_paths
+from cloud_records import cloud_ready, save_record, teacher_sidebar
 ROOT = Path(__file__).resolve().parent
 TENSES = ["present", "past", "future"]
 CONDITIONS = ["adaptive", "non_adaptive"]
@@ -92,6 +93,8 @@ def save_csv_header(path, fields):
 
 
 def append_csv_row(path, fields, row):
+    # 雲端先成功保存，才寫本機備用 CSV。
+    save_record(fields, row)
     with path.open("a", newline="", encoding="utf-8") as file:
         csv.DictWriter(file, fieldnames=fields).writerow(row)
 
@@ -210,6 +213,12 @@ def normalize(text):
 
 
 st.title("📚 English Grammar Practice")
+if not cloud_ready():
+    st.error("尚未設定雲端資料庫，為避免遺失紀錄，暫不開放練習。")
+    st.stop()
+if st.secrets.get("ENABLE_TEACHER_EXPORT", False):
+    if teacher_sidebar():
+        st.stop()
 
 # 更新程式時不沿用舊版三輪的 session_state，避免缺少 total_rounds。
 if "practice" in st.session_state and "total_rounds" not in st.session_state["practice"]:
