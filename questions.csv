@@ -1,0 +1,49 @@
+﻿question_id,tense,sentence,base_verb,correct_answer,time_cue,verb_type,explanation
+PRE001,present,"Every day, Amy ____ to school.",walk,walks,Every day,regular,Every day 表示日常習慣。Amy 是第三人稱單數，因此 walk 加 -s。
+PAS001,past,"Yesterday, Amy ____ to school.",walk,walked,Yesterday,regular,Yesterday 表示過去時間，因此 walk 變成 walked。
+FUT001,future,"Tomorrow, Amy ____ to school.",walk,will walk,Tomorrow,regular,Tomorrow 表示未來時間，使用 will + 動詞原形。
+PRE002,present,"Every morning, Ben ____ his teeth.",brush,brushes,Every morning,regular,Every morning 表示日常習慣。Ben 是第三人稱單數，因此 brush 加 -es。
+PRE003,present,"On Mondays, Lily ____ the piano.",play,plays,On Mondays,regular,On Mondays 表示固定習慣。Lily 是第三人稱單數，因此 play 加 -s。
+PRE004,present,"Every night, Dad ____ dinner.",cook,cooks,Every night,regular,Every night 表示日常習慣。Dad 是第三人稱單數，因此 cook 加 -s。
+PAS002,past,"Last night, Mia ____ a cake.",bake,baked,Last night,regular,Last night 表示過去時間。bake 的過去式是 baked。
+PAS003,past,"Last Sunday, we ____ to the park.",go,went,Last Sunday,irregular,Last Sunday 表示過去時間。go 的不規則過去式是 went。
+PAS004,past,"Two days ago, Ella ____ an apple.",eat,ate,Two days ago,irregular,Two days ago 表示過去時間。eat 的不規則過去式是 ate。
+FUT002,future,"Next weekend, Sam ____ his grandma.",visit,will visit,Next weekend,regular,Next weekend 表示未來時間。使用 will + visit。
+FUT003,future,"Tomorrow, Ben ____ soccer.",play,will play,Tomorrow,regular,Tomorrow 表示未來時間。使用 will + play。
+FUT004,future,"Next week, they ____ the classroom.",clean,will clean,Next week,regular,Next week 表示未來時間。使用 will + clean。
+PRE005,present,"Every afternoon, they ____ basketball.",play,play,Every afternoon,regular,Every afternoon 表示日常習慣。they 搭配動詞原形 play。
+PRE006,present,"Every morning, Tom ____ milk.",drink,drinks,Every morning,irregular,Every morning 表示日常習慣。Tom 是第三人稱單數，因此 drink 加 -s。
+PRE007,present,"On Sundays, we ____ our bikes.",ride,ride,On Sundays,irregular,On Sundays 表示固定習慣。we 搭配動詞原形 ride。
+PAS005,past,"Last weekend, Dad ____ dinner.",make,made,Last weekend,irregular,Last weekend 表示過去時間。make 的過去式是 made。
+PAS006,past,"Yesterday, the children ____ at home.",stay,stayed,Yesterday,regular,Yesterday 表示過去時間。stay 的過去式是 stayed。
+PAS007,past,"Two hours ago, Mia ____ a letter.",write,wrote,Two hours ago,irregular,Two hours ago 表示過去時間。write 的過去式是 wrote。
+FUT005,future,"Tomorrow, we ____ a movie.",watch,will watch,Tomorrow,regular,Tomorrow 表示未來時間。使用 will + watch。
+FUT006,future,"Next Monday, she ____ her room.",clean,will clean,Next Monday,regular,Next Monday 表示未來時間。使用 will + clean。
+FUT007,future,"Next month, they ____ their grandma.",visit,will visit,Next month,regular,Next month 表示未來時間。使用 will + visit。
+TEST_PRE001,present,"Every Monday, Mia ____ her room.",clean,cleans,Every Monday,regular,Every Monday 是時間線索；正確動詞形式為 cleans。
+TEST_PRE002,present,"Every afternoon, Leo ____ water.",drink,drinks,Every afternoon,irregular,Every afternoon 是時間線索；正確動詞形式為 drinks。
+TEST_PRE003,present,"On Fridays, Emma ____ her grandmother.",visit,visits,On Fridays,regular,On Fridays 是時間線索；正確動詞形式為 visits。
+TEST_PRE004,present,"Every night, Tom ____ his hands.",wash,washes,Every night,regular,Every night 是時間線索；正確動詞形式為 washes。
+TEST_PRE005,present,"Every morning, Lily ____ her schoolbag.",pack,packs,Every morning,regular,Every morning 是時間線索；正確動詞形式為 packs。
+TEST_PRE006,present,"On weekdays, Ben ____ to the library.",walk,walks,On weekdays,regular,On weekdays 是時間線索；正確動詞形式為 walks。
+TEST_PRE007,present,"Every Saturday, Dad ____ breakfast.",make,makes,Every Saturday,irregular,Every Saturday 是時間線索；正確動詞形式為 makes。
+TEST_PRE008,present,"Every evening, Amy ____ a storybook.",read,reads,Every evening,irregular,Every evening 是時間線索；正確動詞形式為 reads。
+TEST_PRE009,present,"Every weekend, Kate ____ tennis.",play,plays,Every weekend,regular,Every weekend 是時間線索；正確動詞形式為 plays。
+TEST_PAS001,past,"Last Monday, Mia ____ her room.",clean,cleaned,Last Monday,regular,Last Monday 是時間線索；正確動詞形式為 cleaned。
+TEST_PAS002,past,"Yesterday, Leo ____ some water.",drink,drank,Yesterday,irregular,Yesterday 是時間線索；正確動詞形式為 drank。
+TEST_PAS003,past,"Last Friday, Emma ____ her grandmother.",visit,visited,Last Friday,regular,Last Friday 是時間線索；正確動詞形式為 visited。
+TEST_PAS004,past,"Last night, Tom ____ his hands.",wash,washed,Last night,regular,Last night 是時間線索；正確動詞形式為 washed。
+TEST_PAS005,past,"Yesterday morning, Lily ____ her schoolbag.",pack,packed,Yesterday morning,regular,Yesterday morning 是時間線索；正確動詞形式為 packed。
+TEST_PAS006,past,"Yesterday, Ben ____ to the library.",walk,walked,Yesterday,regular,Yesterday 是時間線索；正確動詞形式為 walked。
+TEST_PAS007,past,"Last Saturday, Dad ____ breakfast.",make,made,Last Saturday,irregular,Last Saturday 是時間線索；正確動詞形式為 made。
+TEST_PAS008,past,"Yesterday evening, Amy ____ a new book.",buy,bought,Yesterday evening,irregular,Yesterday evening 是時間線索；正確動詞形式為 bought。
+TEST_PAS009,past,"Yesterday, Kate ____ tennis.",play,played,Yesterday,regular,Yesterday 是時間線索；正確動詞形式為 played。
+TEST_FUT001,future,"Tomorrow, Mia ____ her room.",clean,will clean,Tomorrow,regular,Tomorrow 是時間線索；正確動詞形式為 will clean。
+TEST_FUT002,future,"Tomorrow, Leo ____ some water.",drink,will drink,Tomorrow,irregular,Tomorrow 是時間線索；正確動詞形式為 will drink。
+TEST_FUT003,future,"Next Friday, Emma ____ her grandmother.",visit,will visit,Next Friday,regular,Next Friday 是時間線索；正確動詞形式為 will visit。
+TEST_FUT004,future,"Tomorrow night, Tom ____ his hands.",wash,will wash,Tomorrow night,regular,Tomorrow night 是時間線索；正確動詞形式為 will wash。
+TEST_FUT005,future,"Tomorrow morning, Lily ____ her schoolbag.",pack,will pack,Tomorrow morning,regular,Tomorrow morning 是時間線索；正確動詞形式為 will pack。
+TEST_FUT006,future,"Next Monday, Ben ____ to the library.",walk,will walk,Next Monday,regular,Next Monday 是時間線索；正確動詞形式為 will walk。
+TEST_FUT007,future,"Next Saturday, Dad ____ breakfast.",make,will make,Next Saturday,irregular,Next Saturday 是時間線索；正確動詞形式為 will make。
+TEST_FUT008,future,"Tomorrow evening, Amy ____ a new book.",buy,will buy,Tomorrow evening,irregular,Tomorrow evening 是時間線索；正確動詞形式為 will buy。
+TEST_FUT009,future,"Next weekend, Kate ____ tennis.",play,will play,Next weekend,regular,Next weekend 是時間線索；正確動詞形式為 will play。
