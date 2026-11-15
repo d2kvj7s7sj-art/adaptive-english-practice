@@ -47,3 +47,57 @@ TEST_FUT006,future,"Next Monday, Ben ____ to the library.",walk,will walk,Next M
 TEST_FUT007,future,"Next Saturday, Dad ____ breakfast.",make,will make,Next Saturday,irregular,Next Saturday 是時間線索；正確動詞形式為 will make。
 TEST_FUT008,future,"Tomorrow evening, Amy ____ a new book.",buy,will buy,Tomorrow evening,irregular,Tomorrow evening 是時間線索；正確動詞形式為 will buy。
 TEST_FUT009,future,"Next weekend, Kate ____ tennis.",play,will play,Next weekend,regular,Next weekend 是時間線索；正確動詞形式為 will play。
+IRR_PAS001,past,"Yesterday, Mia ____ up at seven.",wake,woke,Yesterday,irregular,Yesterday 表示過去時間；wake 的不規則過去式是 woke。
+IRR_PAS002,past,"Last night, Leo ____ a storybook.",read,read,Last night,irregular,Last night 表示過去時間；read 的過去式拼字不變，但發音為 /red/。
+IRR_PAS003,past,"Yesterday, an apple ____ from the tree.",fall,fell,Yesterday,irregular,Yesterday 表示過去時間；fall 的不規則過去式是 fell。
+IRR_PAS004,past,"Last Saturday, Amy ____ in the pool.",swim,swam,Last Saturday,irregular,Last Saturday 表示過去時間；swim 的不規則過去式是 swam。
+IRR_PAS005,past,"Yesterday, the teacher ____ hello.",say,said,Yesterday,irregular,Yesterday 表示過去時間；say 的不規則過去式是 said。
+IRR_PAS006,past,"Last week, Dad ____ me a book.",give,gave,Last week,irregular,Last week 表示過去時間；give 的不規則過去式是 gave。
+IRR_PAS007,past,"Yesterday, Lily ____ a bird.",see,saw,Yesterday,irregular,Yesterday 表示過去時間；see 的不規則過去式是 saw。
+IRR_PAS008,past,"Yesterday, the boy ____ on the chair.",sit,sat,Yesterday,irregular,Yesterday 表示過去時間；sit 的不規則過去式是 sat。
+IRR_PAS009,past,"Yesterday, the top ____ on the table.",spin,spun,Yesterday,irregular,Yesterday 表示過去時間；spin 的不規則過去式是 spun。
+IRR_PAS010,past,"Yesterday, the cat ____ under the bed.",hide,hid,Yesterday,irregular,Yesterday 表示過去時間；hide 的不規則過去式是 hid。
+IRR_PAS011,past,"Last night, Mia ____ about the story.",think,thought,Last night,irregular,Last night 表示過去時間；think 的不規則過去式是 thought。
+IRR_PAS012,past,"Yesterday, Mom ____ a cake.",make,made,Yesterday,irregular,Yesterday 表示過去時間；make 的不規則過去式是 made。
+IRR_PAS013,past,"Last week, a bird ____ over the tree.",fly,flew,Last week,irregular,Last week 表示過去時間；fly 的不規則過去式是 flew。
+IRR_PAS014,past,"Yesterday, they ____ lunch at school.",have,had,Yesterday,irregular,Yesterday 表示過去時間；have 的不規則過去式是 had。
+IRR_PAS015,past,"Yesterday, Ben ____ his lost pen.",find,found,Yesterday,irregular,Yesterday 表示過去時間；find 的不規則過去式是 found。
+IRR_PAS016,past,"Yesterday, I ____ a gift.",get,got,Yesterday,irregular,Yesterday 表示過去時間；get 的不規則過去式是 got。
+IRR_PAS017,past,"Yesterday, Dad ____ a photo.",take,took,Yesterday,irregular,Yesterday 表示過去時間；take 的不規則過去式是 took。
+IRR_PAS018,past,"Yesterday, Anna ____ happy.",feel,felt,Yesterday,irregular,Yesterday 表示過去時間；feel 的不規則過去式是 felt。
+IRR_PRE001,present,"Every morning, Emma ____ up at six.",wake,wakes,Every morning,irregular,Every morning 表示日常習慣；主詞為第三人稱單數，wake 的現在式為 wakes。
+IRR_PRE002,present,"Every night, Dad ____ a book.",read,reads,Every night,irregular,Every night 表示日常習慣；主詞為第三人稱單數，read 的現在式為 reads。 此處 read 的發音為 /riːdz/。
+IRR_PRE003,present,"Every autumn, leaves ____ from the trees.",fall,fall,Every autumn,irregular,Every autumn 表示經常發生的事情；主詞為複數，使用 fall。
+IRR_PRE004,present,"Every Sunday, the boy ____ in the pool.",swim,swims,Every Sunday,irregular,Every Sunday 表示日常習慣；主詞為第三人稱單數，swim 的現在式為 swims。
+IRR_PRE005,present,"Every morning, our teacher ____ hello.",say,says,Every morning,irregular,Every morning 表示日常習慣；主詞為第三人稱單數，say 的現在式為 says。
+IRR_PRE006,present,"Every Friday, Dad ____ me a ride to school.",give,gives,Every Friday,irregular,Every Friday 表示日常習慣；主詞為第三人稱單數，give 的現在式為 gives。
+IRR_PRE007,present,"Every morning, Mia ____ her friend at school.",see,sees,Every morning,irregular,Every morning 表示日常習慣；主詞為第三人稱單數，see 的現在式為 sees。
+IRR_PRE008,present,"Every day, the cat ____ by the window.",sit,sits,Every day,irregular,Every day 表示日常習慣；主詞為第三人稱單數，sit 的現在式為 sits。
+IRR_PRE009,present,"When Leo plays, his top ____ quickly.",spin,spins,When Leo plays,irregular,When Leo plays 表示日常習慣；主詞為第三人稱單數，spin 的現在式為 spins。
+IRR_PRE010,present,"Every afternoon, the puppy ____ behind the sofa.",hide,hides,Every afternoon,irregular,Every afternoon 表示日常習慣；主詞為第三人稱單數，hide 的現在式為 hides。
+IRR_PRE011,present,"Every night, Ben ____ about his day.",think,thinks,Every night,irregular,Every night 表示日常習慣；主詞為第三人稱單數，think 的現在式為 thinks。
+IRR_PRE012,present,"Every weekend, Mom ____ pancakes.",make,makes,Every weekend,irregular,Every weekend 表示日常習慣；主詞為第三人稱單數，make 的現在式為 makes。
+IRR_PRE013,present,"Every morning, birds ____ over the park.",fly,fly,Every morning,irregular,Every morning 表示經常發生的事情；主詞為複數，使用 fly。
+IRR_PRE014,present,"Every day, Leo ____ lunch at school.",have,has,Every day,irregular,Every day 表示日常習慣；主詞為第三人稱單數，have 的現在式為 has。
+IRR_PRE015,present,"Every weekend, Amy ____ shells on the beach.",find,finds,Every weekend,irregular,Every weekend 表示日常習慣；主詞為第三人稱單數，find 的現在式為 finds。
+IRR_PRE016,present,"Every Friday, she ____ a sticker in class.",get,gets,Every Friday,irregular,Every Friday 表示日常習慣；主詞為第三人稱單數，get 的現在式為 gets。
+IRR_PRE017,present,"Every Saturday, Dad ____ photos.",take,takes,Every Saturday,irregular,Every Saturday 表示日常習慣；主詞為第三人稱單數，take 的現在式為 takes。
+IRR_PRE018,present,"Every morning, Ben ____ happy.",feel,feels,Every morning,irregular,Every morning 表示日常習慣；主詞為第三人稱單數，feel 的現在式為 feels。
+IRR_FUT001,future,"Tomorrow morning, Leo ____ up early.",wake,will wake,Tomorrow morning,irregular,Tomorrow morning 表示未來時間；使用 will + 動詞原形，因此答案是 will wake。
+IRR_FUT002,future,"Tomorrow night, Amy ____ a new story.",read,will read,Tomorrow night,irregular,Tomorrow night 表示未來時間；使用 will + 動詞原形，因此答案是 will read。
+IRR_FUT003,future,"Tomorrow, another leaf ____ from the tree.",fall,will fall,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will fall。
+IRR_FUT004,future,"Next Saturday, they ____ in the pool.",swim,will swim,Next Saturday,irregular,Next Saturday 表示未來時間；使用 will + 動詞原形，因此答案是 will swim。
+IRR_FUT005,future,"Tomorrow, Lily ____ hello to the new student.",say,will say,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will say。
+IRR_FUT006,future,"Next week, Anna ____ a gift to her friend.",give,will give,Next week,irregular,Next week 表示未來時間；使用 will + 動詞原形，因此答案是 will give。
+IRR_FUT007,future,"Tomorrow, we ____ a movie.",see,will see,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will see。
+IRR_FUT008,future,"Tomorrow, Dad ____ by the window.",sit,will sit,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will sit。
+IRR_FUT009,future,"Tomorrow, the top ____ on the table.",spin,will spin,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will spin。
+IRR_FUT010,future,"Tomorrow, the puppy ____ under the bed.",hide,will hide,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will hide。
+IRR_FUT011,future,"Tomorrow, I ____ about this question.",think,will think,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will think。
+IRR_FUT012,future,"Next Sunday, Leo ____ a cake.",make,will make,Next Sunday,irregular,Next Sunday 表示未來時間；使用 will + 動詞原形，因此答案是 will make。
+IRR_FUT013,future,"Tomorrow, the birds ____ over the playground.",fly,will fly,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will fly。
+IRR_FUT014,future,"Tomorrow, we ____ lunch together.",have,will have,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will have。
+IRR_FUT015,future,"Next Sunday, Amy ____ more shells at the beach.",find,will find,Next Sunday,irregular,Next Sunday 表示未來時間；使用 will + 動詞原形，因此答案是 will find。
+IRR_FUT016,future,"Tomorrow, Mina ____ a new book.",get,will get,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will get。
+IRR_FUT017,future,"Next Sunday, Dad ____ a photo.",take,will take,Next Sunday,irregular,Next Sunday 表示未來時間；使用 will + 動詞原形，因此答案是 will take。
+IRR_FUT018,future,"Tomorrow, Ben ____ better.",feel,will feel,Tomorrow,irregular,Tomorrow 表示未來時間；使用 will + 動詞原形，因此答案是 will feel。
