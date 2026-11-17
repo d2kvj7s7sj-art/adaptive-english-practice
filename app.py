@@ -14,7 +14,12 @@ import streamlit as st
 from adaptive import choose_allocation
 
 from storage import create_session_paths
-from cloud_records import cloud_ready, save_record, teacher_sidebar
+from cloud_records import (
+    cloud_ready,
+    save_record,
+    teacher_sidebar,
+    get_used_question_ids,
+)
 ROOT = Path(__file__).resolve().parent
 TENSES = ["present", "past", "future"]
 CONDITIONS = ["adaptive", "non_adaptive"]
@@ -179,15 +184,39 @@ def begin_round(practice):
     practice["scores"] = scores
 
 
+
 def new_practice(student_id, questions, condition, total_rounds=DEFAULT_ROUNDS):
     if condition not in CONDITIONS:
         raise ValueError(f"不支援的實驗條件：{condition}")
-    validate_question_capacity(questions, total_rounds, condition)
+
+    # 1. 從 Supabase 查詢這位學生以前答過的題目
+    used_ids = get_used_question_ids(student_id)
+
+    # 2. 排除已經作答的題目
+    available_questions = [
+        q for q in questions
+        if q["question_id"] not in used_ids
+    ]
+
+    # 3. 檢查剩餘題目是否足夠
+    validate_question_capacity(
+        available_questions, total_rounds, condition
+    )
+
+    # 4. 建立新的練習場次
     session_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+
+    # 5. 使用剩餘題目建立各時態題池
     pools = {}
     for tense in TENSES:
-        pools[tense] = [q for q in questions if q["tense"] == tense]
+        pools[tense] = [
+            q for q in available_questions
+            if q["tense"] == tense
+        ]
         random.shuffle(pools[tense])
+
+    # 以下保留原有 create_session_paths() 及 practice 字典程式
+
 
     response_file, decision_file = create_session_paths(student_id, session_id)
     save_csv_header(response_file, RESPONSE_FIELDS)
@@ -227,7 +256,7 @@ if "practice" in st.session_state and "total_rounds" not in st.session_state["pr
 
 try:
     questions = read_questions()
-except (OSError, ValueError) as exc:
+except (OSError, ValueError, RuntimeError) as exc:
     st.error(str(exc))
     st.stop()
 

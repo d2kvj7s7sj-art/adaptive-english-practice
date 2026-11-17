@@ -4,6 +4,7 @@ Server-only secret key. Never include this key in code, logs, or client UI.
 """
 from __future__ import annotations
 
+import re
 import csv
 import hmac
 import io
@@ -97,6 +98,62 @@ def save_record(fields: list[str], row: dict) -> None:
         raise RuntimeError("雲端連線失敗，作答尚未確認儲存，請稍後重試。") from exc
     _check_response(response)
 
+
+def get_used_question_ids(student_id: str) -> set[str]:
+    """查詢指定學生過去已提交作答的題目 ID。"""
+    student_id = student_id.strip().upper()
+
+    if not re.fullmatch(r"[A-Z0-9_-]{1,20}", student_id):
+        raise ValueError("Student ID 格式不正確。")
+
+    if not cloud_ready():
+        raise RuntimeError("Supabase 尚未設定，無法檢查舊題。")
+
+    used_ids = set()
+    offset = 0
+    page_size = 500
+
+    while True:
+        params = {
+            "select": "question_id",
+            "student_id": f"eq.{student_id}",
+            "order": "session_id.asc,round_no.asc,question_id.asc",
+            "limit": page_size,
+            "offset": offset,
+        }
+
+        try:
+            resp = requests.get(
+                _endpoint("practice_responses"),
+                headers=_headers(),
+                params=params,
+                timeout=20,
+            )
+        except requests.RequestException as exc:
+            raise RuntimeError(
+                "無法查詢學生過去的作答紀錄，已停止選題。"
+            ) from exc
+
+        _check_response(resp)
+
+        try:
+            rows = resp.json()
+        except ValueError as exc:
+            raise RuntimeError("Supabase 回傳的資料格式不正確。") from exc
+
+        if not isinstance(rows, list):
+            raise RuntimeError("Supabase 回傳的資料格式不正確。")
+
+        used_ids.update(
+            row["question_id"]
+            for row in rows
+            if isinstance(row, dict) and row.get("question_id")
+        )
+
+        if len(rows) < page_size:
+            return used_ids
+
+        offset += page_size
 
 def _fetch_all(table: str) -> list[dict]:
     """Page over records rather than silently truncating at Supabase's default 1000."""
