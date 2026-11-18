@@ -6,6 +6,7 @@ Place this file next to questions.csv and adaptive.py. Start using:
 import csv
 import random
 import re
+import threading
 import time
 from datetime import datetime
 from pathlib import Path
@@ -102,6 +103,34 @@ def append_csv_row(path, fields, row):
     save_record(fields, row)
     with path.open("a", newline="", encoding="utf-8") as file:
         csv.DictWriter(file, fieldnames=fields).writerow(row)
+
+
+@st.cache_resource(ttl=7200, max_entries=256)
+def _answer_lock(session_id: str):
+    """One lock per practice session, shared across Streamlit reruns."""
+    return threading.Lock()
+
+
+def save_answer_once(practice, result, row):
+    """Check and store one (round, question) under the same lock."""
+    key = (result["round_no"], result["question_id"])
+    with _answer_lock(practice["session_id"]):
+        previous = next(
+            (
+                answer for answer in practice["all_answers"]
+                if (answer["round_no"], answer["question_id"]) == key
+            ),
+            None,
+        )
+        if previous is not None:
+            print("Duplicate submission blocked:", key, flush=True)
+            return previous
+
+        # Preserve cloud-first persistence; do not advance on failed save.
+        append_csv_row(practice["response_file"], RESPONSE_FIELDS, row)
+        practice["all_answers"].append(result)
+        practice["round_answers"].append(result)
+        return result
 
 
 def read_assignment(student_id):
@@ -423,7 +452,7 @@ else:
                     "explanation": q["explanation"],
                     "is_correct": is_correct,
                 }
-                append_csv_row(p["response_file"], RESPONSE_FIELDS, {
+                result = save_answer_once(p, result, {
                     "student_id": p["student_id"],
                     "session_id": p["session_id"],
                     "round_no": round_no,
@@ -434,8 +463,6 @@ else:
                     "response_seconds": seconds,
                     "condition": p["condition"],
                 })
-                p["all_answers"].append(result)
-                p["round_answers"].append(result)
                 p["last_result"] = result
                 p["status"] = "feedback"
                 st.rerun()
