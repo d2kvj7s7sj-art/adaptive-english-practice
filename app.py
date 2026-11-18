@@ -217,7 +217,6 @@ def new_practice(student_id, questions, condition, total_rounds=DEFAULT_ROUNDS):
 
     # 以下保留原有 create_session_paths() 及 practice 字典程式
 
-
     response_file, decision_file = create_session_paths(student_id, session_id)
     save_csv_header(response_file, RESPONSE_FIELDS)
     save_csv_header(decision_file, DECISION_FIELDS)
@@ -301,8 +300,28 @@ index = p["question_index"]
 st.caption(f"Student: {p['student_id']}  |  Round {round_no} / {total_rounds}")
 if TEST_MODE:
     st.caption(f"Testing condition: {p['condition']}")
+
 completed = len(p["all_answers"])
-st.progress(completed / total_questions, text=f"Completed: {completed} / {total_questions}")
+
+unique_count = len({
+    (a["round_no"], a["question_id"])
+    for a in p["all_answers"]
+})
+
+if completed != unique_count or completed > total_questions:
+    print(
+        f"Progress error: completed={completed}, "
+        f"unique={unique_count}, total={total_questions}, "
+        f"round={round_no}, index={index}",
+        flush=True
+    )
+    st.error("練習進度異常，請通知老師。")
+    st.stop()
+
+st.progress(
+    completed / total_questions,
+    text=f"Completed: {completed} / {total_questions}"
+)
 st.divider()
 
 if status == "review":
@@ -354,8 +373,25 @@ else:
             answer = st.text_input("Your answer:")
             submitted = st.form_submit_button("Check Answer")
 
+
         if submitted:
+            # 檢查同一輪的同一道題是否已提交
+            previous = next(
+                (
+                    a for a in p["all_answers"]
+                    if a["round_no"] == round_no
+                    and a["question_id"] == q["question_id"]
+                ),
+                None
+            )
+
+            if previous is not None:
+                p["last_result"] = previous
+                p["status"] = "feedback"
+                st.rerun()
+
             raw_answer = answer.strip()
+
             if not raw_answer:
                 st.warning("Please enter your answer.")
             else:
