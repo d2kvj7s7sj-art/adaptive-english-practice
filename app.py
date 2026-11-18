@@ -308,13 +308,29 @@ unique_count = len({
     for a in p["all_answers"]
 })
 
+
 if completed != unique_count or completed > total_questions:
+    keys = [
+        (a["round_no"], a["question_id"])
+        for a in p["all_answers"]
+    ]
+
+    duplicates = [
+        key for key in set(keys)
+        if keys.count(key) > 1
+    ]
+
     print(
-        f"Progress error: completed={completed}, "
-        f"unique={unique_count}, total={total_questions}, "
-        f"round={round_no}, index={index}",
+        "Progress error:",
+        "completed=", completed,
+        "unique=", unique_count,
+        "duplicates=", duplicates,
+        "round=", round_no,
+        "index=", index,
+        "status=", status,
         flush=True
     )
+
     st.error("練習進度異常，請通知老師。")
     st.stop()
 
