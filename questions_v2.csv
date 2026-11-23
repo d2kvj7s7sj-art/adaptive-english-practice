@@ -1,0 +1,121 @@
+﻿question_id,tense,sentence,base_verb,correct_answer,time_cue,verb_type,explanation,subject_type,cue_position,target_form,item_family
+V2_PRE_001,present,"Every morning, I ____ my schoolbag.",pack,pack,Every morning,present_base,Every morning → present. I → pack.,pronoun_singular,sentence_initial,present_base,pack_schoolbag
+V2_PRE_002,present,"On Fridays, we ____ basketball after school.",play,play,On Fridays,present_base,On Fridays → present. We → play.,pronoun_plural,sentence_initial,present_base,play_basketball
+V2_PRE_003,present,"Every evening, they ____ dinner together.",cook,cook,Every evening,present_base,Every evening → present. They → cook.,pronoun_plural,sentence_initial,present_base,cook_dinner
+V2_PRE_004,present,"Every weekend, my parents ____ their friends.",visit,visit,Every weekend,present_base,Every weekend → present. My parents → visit.,plural_noun,sentence_initial,present_base,visit_friends
+V2_PRE_005,present,"Every Tuesday, Leo ____ piano after school.",practice,practices,Every Tuesday,present_s,Every Tuesday → present. Leo → practices.,third_person_singular,sentence_initial,present_s,practice_piano
+V2_PRE_006,present,"Every night, Mia ____ a story before bed.",read,reads,Every night,present_s,Every night → present. Mia → reads.,third_person_singular,sentence_initial,present_s,read_story
+V2_PRE_007,present,"On Mondays, Ben ____ to school with his sister.",walk,walks,On Mondays,present_s,On Mondays → present. Ben → walks.,third_person_singular,sentence_initial,present_s,walk_school
+V2_PRE_008,present,"Every afternoon, Amy ____ her homework.",finish,finishes,Every afternoon,present_es,Every afternoon → present. Amy → finishes.,third_person_singular,sentence_initial,present_es,finish_homework
+V2_PRE_009,present,"Every Saturday, Tom ____ his bike.",wash,washes,Every Saturday,present_es,Every Saturday → present. Tom → washes.,third_person_singular,sentence_initial,present_es,wash_bike
+V2_PRE_010,present,"Every Wednesday, Jane ____ English after dinner.",study,studies,Every Wednesday,present_ies,Every Wednesday → present. Jane → studies.,third_person_singular,sentence_initial,present_ies,study_english
+V2_PRE_011,present,"Every day, the baby ____ when he is hungry.",cry,cries,Every day,present_ies,Every day → present. The baby → cries.,third_person_singular,sentence_initial,present_ies,baby_cry
+V2_PRE_012,present,"Every Thursday, Lily ____ art class after school.",have,has,Every Thursday,present_has,Every Thursday → present. Lily → has.,third_person_singular,sentence_initial,present_has,have_art_class
+V2_PRE_013,present,You ____ your teeth every morning.,brush,brush,every morning,present_base,Every morning → present. You → brush.,pronoun_singular,sentence_final,present_base,brush_teeth
+V2_PRE_014,present,The boys ____ to school on school days.,walk,walk,on school days,present_base,On school days → present. The boys → walk.,plural_noun,sentence_final,present_base,walk_school_plural
+V2_PRE_015,present,We ____ water after P.E. every afternoon.,drink,drink,every afternoon,present_base,Every afternoon → present. We → drink.,pronoun_plural,sentence_final,present_base,drink_water
+V2_PRE_016,present,My cousins ____ tennis every weekend.,play,play,every weekend,present_base,Every weekend → present. My cousins → play.,plural_noun,sentence_final,present_base,play_tennis
+V2_PRE_017,present,Dad ____ the windows every evening.,close,closes,every evening,present_s,Every evening → present. Dad → closes.,third_person_singular,sentence_final,present_s,close_windows
+V2_PRE_018,present,My sister ____ milk every night.,drink,drinks,every night,present_s,Every night → present. My sister → drinks.,third_person_singular,sentence_final,present_s,drink_milk_present
+V2_PRE_019,present,Peter ____ his grandmother on Sundays.,visit,visits,on Sundays,present_s,On Sundays → present. Peter → visits.,third_person_singular,sentence_final,present_s,visit_grandmother
+V2_PRE_020,present,The dog ____ around the yard every morning.,run,runs,every morning,present_s,Every morning → present. The dog → runs.,third_person_singular,sentence_final,present_s,run_yard
+V2_PRE_021,present,Emma ____ the bus every afternoon.,catch,catches,every afternoon,present_es,Every afternoon → present. Emma → catches.,third_person_singular,sentence_final,present_es,catch_bus
+V2_PRE_022,present,Dad ____ the dishes every night.,wash,washes,every night,present_es,Every night → present. Dad → washes.,third_person_singular,sentence_final,present_es,wash_dishes
+V2_PRE_023,present,Anna ____ her books to class every Friday.,carry,carries,every Friday,present_ies,Every Friday → present. Anna → carries.,third_person_singular,sentence_final,present_ies,carry_books
+V2_PRE_024,present,Kate ____ her brother every Saturday.,help,helps,every Saturday,present_s,Every Saturday → present. Kate → helps.,third_person_singular,sentence_final,present_s,help_brother
+V2_PRE_025,present,I usually ____ fruit after lunch every school day.,eat,eat,every school day,present_base,Every school day → present. I → eat.,pronoun_singular,sentence_final,present_base,eat_fruit
+V2_PRE_026,present,They usually ____ books after class every afternoon.,read,read,every afternoon,present_base,Every afternoon → present. They → read.,pronoun_plural,sentence_final,present_base,read_books
+V2_PRE_027,present,We often ____ English songs every Wednesday.,sing,sing,every Wednesday,present_base,Every Wednesday → present. We → sing.,pronoun_plural,sentence_final,present_base,sing_songs
+V2_PRE_028,present,Leo usually ____ breakfast at home every morning.,eat,eats,every morning,present_s,Every morning → present. Leo → eats.,third_person_singular,sentence_final,present_s,eat_breakfast
+V2_PRE_029,present,Mia often ____ her mother every evening.,help,helps,every evening,present_s,Every evening → present. Mia → helps.,third_person_singular,sentence_final,present_s,help_mother
+V2_PRE_030,present,The boys usually ____ their bikes after school every day.,ride,ride,after school every day,present_base,Every day → present. The boys → ride.,plural_noun,sentence_final,present_base,ride_bikes
+V2_PAST_001,past,"Yesterday afternoon, Mia ____ her desk.",clean,cleaned,Yesterday afternoon,past_regular_ed,Yesterday afternoon → past. clean → cleaned.,third_person_singular,sentence_initial,past_regular_ed,clean_desk
+V2_PAST_002,past,"Last Friday, we ____ our teacher.",visit,visited,Last Friday,past_regular_ed,Last Friday → past. visit → visited.,pronoun_plural,sentence_initial,past_regular_ed,visit_teacher
+V2_PAST_003,past,"Last night, Tom ____ his hands.",wash,washed,Last night,past_regular_ed,Last night → past. wash → washed.,third_person_singular,sentence_initial,past_regular_ed,wash_hands
+V2_PAST_004,past,"Yesterday morning, the boys ____ to school.",walk,walked,Yesterday morning,past_regular_ed,Yesterday morning → past. walk → walked.,plural_noun,sentence_initial,past_regular_ed,walk_school_plural
+V2_PAST_005,past,"Last Saturday, Emma ____ her mother.",help,helped,Last Saturday,past_regular_ed,Last Saturday → past. help → helped.,third_person_singular,sentence_initial,past_regular_ed,help_mother
+V2_PAST_006,past,"Yesterday, they ____ basketball after school.",play,played,Yesterday,past_regular_ed,Yesterday → past. play → played.,pronoun_plural,sentence_initial,past_regular_ed,play_basketball
+V2_PAST_007,past,"Last weekend, Dad ____ dinner for us.",cook,cooked,Last weekend,past_regular_ed,Last weekend → past. cook → cooked.,third_person_singular,sentence_initial,past_regular_ed,cook_dinner
+V2_PAST_008,past,"Yesterday, Lily ____ the window.",close,closed,Yesterday,past_regular_d,Yesterday → past. close → closed.,third_person_singular,sentence_initial,past_regular_d,close_window
+V2_PAST_009,past,"Last Tuesday, Jane ____ English.",study,studied,Last Tuesday,past_regular_ied,Last Tuesday → past. study → studied.,third_person_singular,sentence_initial,past_regular_ied,study_english
+V2_PAST_010,past,"Yesterday, the baby ____ for a few minutes.",cry,cried,Yesterday,past_regular_ied,Yesterday → past. cry → cried.,third_person_singular,sentence_initial,past_regular_ied,baby_cry
+V2_PAST_011,past,"Yesterday morning, Leo ____ some milk.",drink,drank,Yesterday morning,past_irregular,Yesterday morning → past. drink → drank.,third_person_singular,sentence_initial,past_irregular,drink_milk
+V2_PAST_012,past,"Last Sunday, my sister ____ her bike.",ride,rode,Last Sunday,past_irregular,Last Sunday → past. ride → rode.,third_person_singular,sentence_initial,past_irregular,ride_bike
+V2_PAST_013,past,We ____ the boxes yesterday afternoon.,open,opened,yesterday afternoon,past_regular_ed,Yesterday afternoon → past. open → opened.,pronoun_plural,sentence_final,past_regular_ed,open_boxes
+V2_PAST_014,past,Ben ____ his grandmother last Monday.,call,called,last Monday,past_regular_ed,Last Monday → past. call → called.,third_person_singular,sentence_final,past_regular_ed,call_grandmother
+V2_PAST_015,past,They ____ the ball yesterday.,kick,kicked,yesterday,past_regular_ed,Yesterday → past. kick → kicked.,pronoun_plural,sentence_final,past_regular_ed,kick_ball
+V2_PAST_016,past,Dad ____ the dishes last night.,wash,washed,last night,past_regular_ed,Last night → past. wash → washed.,third_person_singular,sentence_final,past_regular_ed,wash_dishes
+V2_PAST_017,past,My brother ____ the door two days ago.,open,opened,two days ago,past_regular_ed,Two days ago → past. open → opened.,third_person_singular,sentence_final,past_regular_ed,open_door
+V2_PAST_018,past,My parents ____ a movie last weekend.,watch,watched,last weekend,past_regular_ed,Last weekend → past. watch → watched.,plural_noun,sentence_final,past_regular_ed,watch_movie
+V2_PAST_019,past,Anna ____ at home yesterday.,stay,stayed,yesterday,past_regular_ed,Yesterday → past. stay → stayed.,third_person_singular,sentence_final,past_regular_ed,stay_home
+V2_PAST_020,past,Mia ____ the chair last night.,move,moved,last night,past_regular_d,Last night → past. move → moved.,third_person_singular,sentence_final,past_regular_d,move_chair
+V2_PAST_021,past,The boys ____ for the test last Friday.,study,studied,last Friday,past_regular_ied,Last Friday → past. study → studied.,plural_noun,sentence_final,past_regular_ied,study_test
+V2_PAST_022,past,The girl ____ her bag yesterday.,carry,carried,yesterday,past_regular_ied,Yesterday → past. carry → carried.,third_person_singular,sentence_final,past_regular_ied,carry_bag
+V2_PAST_023,past,The dog ____ across the yard yesterday afternoon.,run,ran,yesterday afternoon,past_irregular,Yesterday afternoon → past. run → ran.,third_person_singular,sentence_final,past_irregular,run_yard
+V2_PAST_024,past,My aunt ____ a warm coat last winter.,wear,wore,last winter,past_irregular,Last winter → past. wear → wore.,third_person_singular,sentence_final,past_irregular,wear_coat
+V2_PAST_025,past,"Yesterday after school, we ____ our books.",open,opened,Yesterday after school,past_regular_ed,Yesterday after school → past. open → opened.,pronoun_plural,sentence_initial,past_regular_ed,open_books
+V2_PAST_026,past,"Last night, Dad ____ the door before bed.",close,closed,Last night,past_regular_d,Last night → past. close → closed.,third_person_singular,sentence_initial,past_regular_d,close_door
+V2_PAST_027,past,"Yesterday afternoon, they ____ a picture.",color,colored,Yesterday afternoon,past_regular_ed,Yesterday afternoon → past. color → colored.,pronoun_plural,sentence_initial,past_regular_ed,color_picture
+V2_PAST_028,past,My cousin ____ an apple yesterday morning.,eat,ate,yesterday morning,past_irregular,Yesterday morning → past. eat → ate.,third_person_singular,sentence_final,past_irregular,eat_apple
+V2_PAST_029,past,Dad ____ breakfast for everyone last Saturday.,make,made,last Saturday,past_irregular,Last Saturday → past. make → made.,third_person_singular,sentence_final,past_irregular,make_breakfast
+V2_PAST_030,past,Anna ____ a short story yesterday.,write,wrote,yesterday,past_irregular,Yesterday → past. write → wrote.,third_person_singular,sentence_final,past_irregular,write_story
+V2_FUT_001,future,"Tomorrow morning, I ____ my schoolbag.",pack,will pack,Tomorrow morning,future_will,Tomorrow morning → future. Use will + pack.,pronoun_singular,sentence_initial,future_will,pack_schoolbag
+V2_FUT_002,future,"Next Friday, we ____ our grandparents.",visit,will visit,Next Friday,future_will,Next Friday → future. Use will + visit.,pronoun_plural,sentence_initial,future_will,visit_grandparents
+V2_FUT_003,future,"Tomorrow, they ____ pictures after school.",draw,will draw,Tomorrow,future_will,Tomorrow → future. Use will + draw.,pronoun_plural,sentence_initial,future_will,draw_pictures
+V2_FUT_004,future,"Next weekend, my parents ____ the garden.",water,will water,Next weekend,future_will,Next weekend → future. Use will + water.,plural_noun,sentence_initial,future_will,water_garden
+V2_FUT_005,future,"Tomorrow morning, the boys ____ the bus.",take,will take,Tomorrow morning,future_will,Tomorrow morning → future. Use will + take.,plural_noun,sentence_initial,future_will,take_bus
+V2_FUT_006,future,"Next Sunday, you ____ your cousin.",help,will help,Next Sunday,future_will,Next Sunday → future. Use will + help.,pronoun_singular,sentence_initial,future_will,help_cousin
+V2_FUT_007,future,"Tomorrow afternoon, the girls ____ the classroom.",clean,will clean,Tomorrow afternoon,future_will,Tomorrow afternoon → future. Use will + clean.,plural_noun,sentence_initial,future_will,clean_classroom
+V2_FUT_008,future,"Tomorrow night, we ____ a story before bed.",read,will read,Tomorrow night,future_will,Tomorrow night → future. Use will + read.,pronoun_plural,sentence_initial,future_will,read_story
+V2_FUT_009,future,"Next Monday, Leo ____ his homework after school.",finish,will finish,Next Monday,future_will,Next Monday → future. Use will + finish.,third_person_singular,sentence_initial,future_will,finish_homework
+V2_FUT_010,future,"Next Saturday, Emma ____ her bike in the park.",ride,will ride,Next Saturday,future_will,Next Saturday → future. Use will + ride.,third_person_singular,sentence_initial,future_will,ride_bike_park
+V2_FUT_011,future,"Tomorrow, Dad ____ the windows.",open,will open,Tomorrow,future_will,Tomorrow → future. Use will + open.,third_person_singular,sentence_initial,future_will,open_windows
+V2_FUT_012,future,"Next Tuesday, Kate ____ her teacher.",call,will call,Next Tuesday,future_will,Next Tuesday → future. Use will + call.,third_person_singular,sentence_initial,future_will,call_teacher
+V2_FUT_013,future,I ____ breakfast at home tomorrow morning.,eat,will eat,tomorrow morning,future_will,Tomorrow morning → future. Use will + eat.,pronoun_singular,sentence_final,future_will,eat_breakfast
+V2_FUT_014,future,We ____ English songs after school next Friday.,sing,will sing,next Friday,future_will,Next Friday → future. Use will + sing.,pronoun_plural,sentence_final,future_will,sing_songs
+V2_FUT_015,future,They ____ their books tomorrow afternoon.,carry,will carry,tomorrow afternoon,future_will,Tomorrow afternoon → future. Use will + carry.,pronoun_plural,sentence_final,future_will,carry_books
+V2_FUT_016,future,My cousins ____ a movie next weekend.,watch,will watch,next weekend,future_will,Next weekend → future. Use will + watch.,plural_noun,sentence_final,future_will,watch_movie
+V2_FUT_017,future,The boys ____ their bikes tomorrow.,ride,will ride,tomorrow,future_will,Tomorrow → future. Use will + ride.,plural_noun,sentence_final,future_will,ride_bikes
+V2_FUT_018,future,You ____ your room next Sunday.,paint,will paint,next Sunday,future_will,Next Sunday → future. Use will + paint.,pronoun_singular,sentence_final,future_will,paint_room
+V2_FUT_019,future,Mia ____ a story tomorrow night.,write,will write,tomorrow night,future_will,Tomorrow night → future. Use will + write.,third_person_singular,sentence_final,future_will,write_story
+V2_FUT_020,future,Ben ____ to school next Monday.,walk,will walk,next Monday,future_will,Next Monday → future. Use will + walk.,third_person_singular,sentence_final,future_will,walk_school
+V2_FUT_021,future,Dad ____ breakfast tomorrow morning.,make,will make,tomorrow morning,future_will,Tomorrow morning → future. Use will + make.,third_person_singular,sentence_final,future_will,make_breakfast
+V2_FUT_022,future,Jane ____ a letter next Wednesday.,write,will write,next Wednesday,future_will,Next Wednesday → future. Use will + write.,third_person_singular,sentence_final,future_will,write_letter
+V2_FUT_023,future,Leo ____ some water tomorrow afternoon.,drink,will drink,tomorrow afternoon,future_will,Tomorrow afternoon → future. Use will + drink.,third_person_singular,sentence_final,future_will,drink_water
+V2_FUT_024,future,The children ____ a picture next Saturday.,color,will color,next Saturday,future_will,Next Saturday → future. Use will + color.,plural_noun,sentence_final,future_will,color_picture
+V2_FUT_025,future,"Tomorrow after school, I ____ my aunt.",call,will call,Tomorrow after school,future_will,Tomorrow after school → future. Use will + call.,pronoun_singular,sentence_initial,future_will,call_aunt
+V2_FUT_026,future,"Next week, we ____ a new book.",read,will read,Next week,future_will,Next week → future. Use will + read.,pronoun_plural,sentence_initial,future_will,read_book
+V2_FUT_027,future,"Tomorrow, they ____ lunch at home.",eat,will eat,Tomorrow,future_will,Tomorrow → future. Use will + eat.,pronoun_plural,sentence_initial,future_will,eat_lunch
+V2_FUT_028,future,Amy ____ her teacher next Friday.,help,will help,next Friday,future_will,Next Friday → future. Use will + help.,third_person_singular,sentence_final,future_will,help_teacher
+V2_FUT_029,future,Tom ____ his schoolbag tomorrow morning.,pack,will pack,tomorrow morning,future_will,Tomorrow morning → future. Use will + pack.,third_person_singular,sentence_final,future_will,pack_schoolbag_tom
+V2_FUT_030,future,My parents ____ the car next weekend.,wash,will wash,next weekend,future_will,Next weekend → future. Use will + wash.,plural_noun,sentence_final,future_will,wash_car
+V2_PRE_031,present,"Every morning, Amy ____ her teeth before school.",brush,brushes,Every morning,present_es,Every morning → present. Amy → brushes.,third_person_singular,sentence_initial,present_es,brush_teeth
+V2_PRE_032,present,"Leo ____ a ball with his friends every Friday.",kick,kicks,every Friday,present_s,Every Friday → present. Leo → kicks.,third_person_singular,sentence_final,present_s,kick_ball
+V2_PRE_033,present,"After dinner, Mia ____ her homework at the desk.",study,studies,After dinner,present_ies,After dinner → present. Mia → studies.,third_person_singular,sentence_initial,present_ies,study_homework
+V2_PRE_034,present,"My dad ____ the dishes every night.",wash,washes,every night,present_es,Every night → present. My dad → washes.,third_person_singular,sentence_final,present_es,wash_dishes
+V2_PRE_035,present,"Kevin ____ a blue backpack to school every day.",carry,carries,every day,present_ies,Every day → present. Kevin → carries.,third_person_singular,sentence_final,present_ies,carry_backpack
+V2_PRE_036,present,"Emma ____ a new pencil case in her bag every day.",have,has,every day,present_has,Every day → present. Emma → has.,third_person_singular,sentence_final,present_has,have_pencil_case
+V2_PRE_037,present,"The boys ____ basketball after school on Mondays.",play,play,on Mondays,present_base,On Mondays → present. The boys → play.,plural_noun,sentence_final,present_base,play_basketball
+V2_PRE_038,present,"I ____ my grandma every Sunday.",visit,visit,every Sunday,present_base,Every Sunday → present. I → visit.,pronoun_singular,sentence_final,present_base,visit_grandma
+V2_PRE_039,present,"We ____ lunch together at school every day.",eat,eat,every day,present_base,Every day → present. We → eat.,pronoun_plural,sentence_final,present_base,eat_lunch
+V2_PRE_040,present,"They ____ books in the library after class.",read,read,after class,present_base,After class → present routine. They → read.,pronoun_plural,sentence_final,present_base,read_books
+V2_PAST_031,past,"Yesterday, Ben ____ a sandwich after breakfast.",make,made,Yesterday,past_irregular,Yesterday → past. Make → made.,third_person_singular,sentence_initial,past_irregular,make_sandwich
+V2_PAST_032,past,"Last Saturday, we ____ to the park together.",go,went,Last Saturday,past_irregular,Last Saturday → past. Go → went.,pronoun_plural,sentence_initial,past_irregular,go_park
+V2_PAST_033,past,"The girl ____ a bird in the garden yesterday afternoon.",see,saw,yesterday afternoon,past_irregular,Yesterday afternoon → past. See → saw.,third_person_singular,sentence_final,past_irregular,see_bird
+V2_PAST_034,past,"Last night, Dad ____ some fruit after dinner.",buy,bought,Last night,past_irregular,Last night → past. Buy → bought.,third_person_singular,sentence_initial,past_irregular,buy_fruit
+V2_PAST_035,past,"Two days ago, Mia ____ English for an hour.",study,studied,Two days ago,past_regular_ied,Two days ago → past. Study → studied.,third_person_singular,sentence_initial,past_regular_ied,study_english
+V2_PAST_036,past,"Yesterday morning, Tom ____ breakfast at home.",eat,ate,Yesterday morning,past_irregular,Yesterday morning → past. Eat → ate.,third_person_singular,sentence_initial,past_irregular,eat_breakfast
+V2_PAST_037,past,"Last week, Anna ____ a new book from the library.",take,took,Last week,past_irregular,Last week → past. Take → took.,third_person_singular,sentence_initial,past_irregular,take_book
+V2_PAST_038,past,"The boys ____ to the park after school yesterday.",run,ran,yesterday,past_irregular,Yesterday → past. Run → ran.,plural_noun,sentence_final,past_irregular,run_park
+V2_PAST_039,past,"Last Sunday, Dad ____ a letter to Grandma.",write,wrote,Last Sunday,past_irregular,Last Sunday → past. Write → wrote.,third_person_singular,sentence_initial,past_irregular,write_letter
+V2_PAST_040,past,"Lily ____ her red jacket to school yesterday.",wear,wore,yesterday,past_irregular,Yesterday → past. Wear → wore.,third_person_singular,sentence_final,past_irregular,wear_jacket
+V2_FUT_031,future,"Tomorrow morning, Sam ____ some milk before school.",drink,will drink,Tomorrow morning,future_will,Tomorrow morning → future. Use will + drink.,third_person_singular,sentence_initial,future_will,drink_milk
+V2_FUT_032,future,"Next Saturday, we ____ our grandparents.",visit,will visit,Next Saturday,future_will,Next Saturday → future. Use will + visit.,pronoun_plural,sentence_initial,future_will,visit_grandparents
+V2_FUT_033,future,"Amy ____ her room tomorrow afternoon.",clean,will clean,tomorrow afternoon,future_will,Tomorrow afternoon → future. Use will + clean.,third_person_singular,sentence_final,future_will,clean_room
+V2_FUT_034,future,"The boys ____ rope after school tomorrow.",jump,will jump,tomorrow,future_will,Tomorrow → future. Use will + jump.,plural_noun,sentence_final,future_will,jump_rope
+V2_FUT_035,future,"Next week, Dad ____ the kitchen walls.",paint,will paint,Next week,future_will,Next week → future. Use will + paint.,third_person_singular,sentence_initial,future_will,paint_walls
+V2_FUT_036,future,"Mia ____ a book before bed tonight.",read,will read,tonight,future_will,Tonight → future. Use will + read.,third_person_singular,sentence_final,future_will,read_book
+V2_FUT_037,future,"We ____ dinner together tomorrow.",cook,will cook,tomorrow,future_will,Tomorrow → future. Use will + cook.,pronoun_plural,sentence_final,future_will,cook_dinner
+V2_FUT_038,future,"Tom ____ his teacher after class tomorrow.",call,will call,tomorrow,future_will,Tomorrow → future. Use will + call.,third_person_singular,sentence_final,future_will,call_teacher
+V2_FUT_039,future,"Next Sunday, my family ____ to the park.",walk,will walk,Next Sunday,future_will,Next Sunday → future. Use will + walk.,third_person_singular,sentence_initial,future_will,walk_park
+V2_FUT_040,future,"The students ____ their books to school tomorrow.",carry,will carry,tomorrow,future_will,Tomorrow → future. Use will + carry.,plural_noun,sentence_final,future_will,carry_books

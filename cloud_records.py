@@ -178,6 +178,80 @@ def _fetch_all(table: str) -> list[dict]:
             return all_rows
         offset += page_size
 
+def get_recent_first_attempt_results(
+    student_id: str,
+    per_tense: int = 4,
+    exclude_session_id: str | None = None,
+) -> dict[str, list[bool]]:
+
+    rows = _fetch_all("practice_responses")
+    student_id = student_id.strip().upper()
+
+    rows = [
+        r for r in rows
+        if str(r.get("student_id", "")).strip().upper() == student_id
+        and r.get("tense") in {"present", "past", "future"}
+        and (
+            exclude_session_id is None
+            or str(r.get("session_id", "")) != exclude_session_id
+        )
+    ]
+
+    # 依真正作答時間排序
+    rows.sort(
+        key=lambda r: str(r.get("created_at", ""))
+    )
+
+    # 保險：若同一題因 retry 有多筆，只取最早一次
+    first_attempts = []
+    seen = set()
+
+    for r in rows:
+        key = (
+            r.get("session_id"),
+            r.get("question_id"),
+        )
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+        first_attempts.append(r)
+
+    recent = {
+        "present": [],
+        "past": [],
+        "future": [],
+    }
+
+    for tense in recent:
+        tense_rows = [
+            r for r in first_attempts
+            if r.get("tense") == tense
+        ]
+
+        latest = tense_rows[-per_tense:]
+
+        recent[tense] = [
+            bool(r.get("is_correct"))
+            for r in latest
+        ]
+
+    return recent
+
+def has_sufficient_recent_history(
+    student_id: str,
+    per_tense: int = 4,
+) -> bool:
+    recent = get_recent_first_attempt_results(
+        student_id,
+        per_tense=per_tense,
+    )
+
+    return all(
+        len(recent[tense]) >= per_tense
+        for tense in ("present", "past", "future")
+    )
 
 def _csv_bytes(columns: list[str], rows: list[dict]) -> bytes:
     buffer = io.StringIO(newline="")

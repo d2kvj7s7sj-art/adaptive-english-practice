@@ -18,8 +18,10 @@ from storage import create_session_paths
 from cloud_records import (
     cloud_ready,
     save_record,
-    teacher_sidebar,
     get_used_question_ids,
+    get_recent_first_attempt_results,
+    has_sufficient_recent_history,
+    teacher_sidebar,
 )
 ROOT = Path(__file__).resolve().parent
 TENSES = ["present", "past", "future"]
@@ -47,24 +49,49 @@ DECISION_FIELDS = [
 
 st.set_page_config(page_title="English Grammar Practice", page_icon="📚")
 
+QUESTION_FILE = ROOT / "questions_v2.csv"
+
 
 def read_questions():
-    with (ROOT / "questions.csv").open(encoding="utf-8-sig", newline="") as file:
+    with QUESTION_FILE.open(
+        encoding="utf-8-sig",
+        newline=""
+    ) as file:
         questions = list(csv.DictReader(file))
 
-    required = {"question_id", "tense", "sentence", "base_verb", "correct_answer", "explanation"}
+    required = {
+        "question_id",
+        "tense",
+        "sentence",
+        "base_verb",
+        "correct_answer",
+        "explanation",
+    }
+
     if not questions or not required.issubset(questions[0]):
-        raise ValueError("questions.csv 缺少必要欄位或沒有題目。")
+        raise ValueError(
+            f"{QUESTION_FILE.name} 缺少必要欄位或沒有題目。"
+        )
 
     ids = [q["question_id"] for q in questions]
+
     if len(ids) != len(set(ids)):
-        raise ValueError("questions.csv 有重複的 question_id。")
+        raise ValueError(
+            f"{QUESTION_FILE.name} 有重複的 question_id。"
+        )
 
     for q in questions:
         if q["tense"] not in TENSES:
-            raise ValueError(f"題目 {q['question_id']} 的 tense 必須是 present、past 或 future。")
+            raise ValueError(
+                f"題目 {q['question_id']} 的 tense 必須是 "
+                "present、past 或 future。"
+            )
+
         if any(not q[key].strip() for key in required):
-            raise ValueError(f"題目 {q['question_id']} 有必要欄位留白。")
+            raise ValueError(
+                f"題目 {q['question_id']} 有必要欄位留白。"
+            )
+
     return questions
 
 
@@ -76,20 +103,53 @@ def required_questions_per_tense(rounds, condition):
     return BASELINE_ROUNDS * 2 + (rounds - BASELINE_ROUNDS) * 3
 
 
-def validate_question_capacity(questions, rounds, condition):
+def validate_question_capacity(
+    questions,
+    rounds,
+    condition,
+    has_prior_history=False,
+):
     if not MIN_ROUNDS <= rounds <= MAX_ROUNDS:
-        raise ValueError(f"輪數需介於 {MIN_ROUNDS} 與 {MAX_ROUNDS} 之間。")
-    required = required_questions_per_tense(rounds, condition)
-    shortages = []
-    for tense in TENSES:
-        available = sum(q["tense"] == tense for q in questions)
-        if available < required:
-            shortages.append(f"{tense}: 現有 {available}、至少需要 {required}（缺 {required-available}）")
-    if shortages:
         raise ValueError(
-            f"{rounds} 輪 {condition} 練習的題庫容量不足。為避免題目重複：\n"
+            f"輪數需介於 {MIN_ROUNDS} 與 {MAX_ROUNDS} 之間。"
+        )
+
+    if condition == "non_adaptive":
+        required = rounds * 2
+
+    elif has_prior_history:
+        required = rounds * 3
+
+    else:
+        baseline_rounds = min(BASELINE_ROUNDS, rounds)
+        adaptive_rounds = max(0, rounds - baseline_rounds)
+
+        required = (
+            baseline_rounds * 2
+            + adaptive_rounds * 3
+        )
+
+    shortages = []
+
+    for tense in TENSES:
+        available = sum(
+            q["tense"] == tense
+            for q in questions
+        )
+
+        if available < required:
+            shortages.append(
+                f"{tense}: 現有 {available}、至少需要 {required} "
+                f"(缺 {required - available})"
+            )
+
+    if shortages:
+        stage = "後續練習" if has_prior_history else "第一次練習"
+
+        raise ValueError(
+            f"{rounds} 輪 {condition} {stage}的題庫容量不足。"
+            "為避免題目重複：\n"
             + "\n".join(shortages)
-            + "\n請先擴充 questions.csv；測試用可使用隨附的 extend_test_bank.py。"
         )
 
 
@@ -151,31 +211,72 @@ def read_assignment(student_id):
 
 def begin_round(practice):
     round_no = practice["round_no"]
+
     if not 1 <= round_no <= practice["total_rounds"]:
         raise ValueError(f"不合法的輪次：{round_no}")
-    if round_no <= BASELINE_ROUNDS:
+
+    has_prior_history = practice.get("has_prior_history", False)
+
+    if not has_prior_history and round_no <= BASELINE_ROUNDS:
         allocation = [2, 2, 2]
         scores = ["", "", ""]
         phase = "baseline"
-    else:
+
+    elif practice["condition"] == "adaptive":
         scores = []
+
+        if has_prior_history:
+            prior_recent = get_recent_first_attempt_results(
+                practice["student_id"],
+                per_tense=RECENT_ANSWERS,
+                exclude_session_id=practice["session_id"],
+            )
+        else:
+            prior_recent = {
+                "present": [],
+                "past": [],
+                "future": [],
+            }
+
         for tense in TENSES:
-            recent = [
-                a["is_correct"] for a in practice["all_answers"]
+            current_recent = [
+                a["is_correct"]
+                for a in practice["all_answers"]
                 if a["tense"] == tense
-            ][-RECENT_ANSWERS:]
+            ]
+
+            combined = prior_recent[tense] + current_recent
+            recent = combined[-RECENT_ANSWERS:]
+
             if len(recent) < RECENT_ANSWERS:
-                raise ValueError(f"{tense} 尚未有 {RECENT_ANSWERS} 次作答，無法進入適性階段。")
+                raise ValueError(
+                    f"{tense} 尚未有 {RECENT_ANSWERS} 次作答；"
+                    "無法進入適性階段。"
+                )
+
             scores.append(sum(recent))
 
-        if practice["condition"] == "adaptive":
-            # 沿用既有 adaptive.py，同一套演算法。
-            allocation = choose_allocation(scores, round_no - BASELINE_ROUNDS - 1)
-            phase = "adaptive"
-        else:
-            # 非適性對照組：即使弱項明顯，仍維持三種時態各兩題。
-            allocation = [2, 2, 2]
-            phase = "non_adaptive"
+        allocation = choose_allocation(
+            scores,
+            max(0, round_no - BASELINE_ROUNDS - 1),
+        )
+        phase = "adaptive"
+
+    else:
+        allocation = [2, 2, 2]
+
+        scores = []
+
+        for tense in TENSES:
+            recent = [
+                a["is_correct"]
+                for a in practice["all_answers"]
+                if a["tense"] == tense
+            ][-RECENT_ANSWERS:]
+
+            scores.append(sum(recent) if recent else "")
+
+        phase = "non_adaptive"
 
     if len(allocation) != 3 or sum(allocation) != QUESTIONS_PER_ROUND or min(allocation) < 1 or max(allocation) > 3:
         raise ValueError(f"適性分配需滿足每輪 {QUESTIONS_PER_ROUND} 題、各時態 1–3 題：{allocation}")
@@ -227,29 +328,48 @@ def new_practice(student_id, questions, condition, total_rounds=DEFAULT_ROUNDS):
         if q["question_id"] not in used_ids
     ]
 
-    # 3. 檢查剩餘題目是否足夠
+       # 3. 判斷是否已有足夠的前次練習紀錄
+    has_prior_history = has_sufficient_recent_history(student_id)
+
+    # 4. 檢查剩餘題庫是否足夠
     validate_question_capacity(
-        available_questions, total_rounds, condition
+        available_questions,
+        total_rounds,
+        condition,
+        has_prior_history=has_prior_history,
     )
 
-    # 4. 建立新的練習場次
+    # 5. 建立新的練習場次
     session_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
 
-    # 5. 使用剩餘題目建立各時態題池
+    # 6. 使用剩餘題目建立各時態題池
     pools = {}
+
     for tense in TENSES:
         pools[tense] = [
             q for q in available_questions
             if q["tense"] == tense
         ]
+
         random.shuffle(pools[tense])
 
-    # 以下保留原有 create_session_paths() 及 practice 字典程式
+    # 7. 建立本次 session 的本機 CSV 路徑
+    response_file, decision_file = create_session_paths(
+        student_id,
+        session_id,
+    )
 
-    response_file, decision_file = create_session_paths(student_id, session_id)
-    save_csv_header(response_file, RESPONSE_FIELDS)
-    save_csv_header(decision_file, DECISION_FIELDS)
+    save_csv_header(
+        response_file,
+        RESPONSE_FIELDS,
+    )
 
+    save_csv_header(
+        decision_file,
+        DECISION_FIELDS,
+    )
+
+    # 8. 建立本次練習狀態
     practice = {
         "student_id": student_id,
         "session_id": session_id,
@@ -260,8 +380,11 @@ def new_practice(student_id, questions, condition, total_rounds=DEFAULT_ROUNDS):
         "response_file": response_file,
         "decision_file": decision_file,
         "all_answers": [],
+        "has_prior_history": has_prior_history,
     }
+
     begin_round(practice)
+
     return practice
 
 
