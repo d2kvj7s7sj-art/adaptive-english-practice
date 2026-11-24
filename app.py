@@ -186,10 +186,21 @@ def save_answer_once(practice, result, row):
             print("Duplicate submission blocked:", key, flush=True)
             return previous
 
+        # 第一次真正提交本輪答案時，才儲存本輪 adaptive decision
+        if not practice.get("decision_saved", False):
+            append_csv_row(
+                practice["decision_file"],
+                DECISION_FIELDS,
+                practice["pending_decision"],
+            )
+            practice["decision_saved"] = True
+
         # Preserve cloud-first persistence; do not advance on failed save.
         append_csv_row(practice["response_file"], RESPONSE_FIELDS, row)
+
         practice["all_answers"].append(result)
         practice["round_answers"].append(result)
+
         return result
 
 
@@ -289,8 +300,7 @@ def begin_round(practice):
         practice["pools"][tense] = practice["pools"][tense][count:]
     random.shuffle(selected)
 
-    # Record what the algorithm PLANNED, not what the student completed.
-    append_csv_row(practice["decision_file"], DECISION_FIELDS, {
+    practice["pending_decision"] = {
         "student_id": practice["student_id"],
         "session_id": practice["session_id"],
         "round_no": round_no,
@@ -302,7 +312,9 @@ def begin_round(practice):
         "planned_past": allocation[1],
         "planned_future": allocation[2],
         "condition": practice["condition"],
-    })
+    }
+
+    practice["decision_saved"] = False
 
     practice["round_questions"] = selected
     practice["round_answers"] = []
